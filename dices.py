@@ -4,9 +4,24 @@ from colorama import init, Fore, Back, Style
 
 print("Introduce the comand:", end=" ")
 comand = input()
+valid = False
+
+while valid == False:
+    valid = True
+    if comand == "help":
+        print("Sintaxis: (Number of sides+d+Number of sides of the dice) Example: 1d20")
+        print("Introduce the comand:", end=" ")
+        comand = input()
+        valid = False
+    if (comand.find("d") < 1 or comand.find("d") + 1 == len(comand)) and comand != "help":
+        print("Error, invalid sintaxis. Use 'help' to know about the sintaxis:", end=" ")
+        comand = input()
+        valid = False
+
 #Preparations
 search = comand.find("d")
 long = len(comand)
+
 #Data
 rolls = comand[0:search]
 introlls = int(rolls)
