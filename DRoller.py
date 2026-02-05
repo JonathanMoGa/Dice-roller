@@ -6,14 +6,14 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "d"]
 
 def menu():
     print("+--------------Menu--------------+")
-    print("1) Roll dices")
+    print("1) Roll dice")
     print("2) Exit")
     print("+--------------------------------+")
     select = input()
-    match int(select):
-        case 1:
+    match select:
+        case "1":
             dices()
-        case 2:
+        case "2":
             exit()
 
 def dices():
@@ -25,9 +25,9 @@ def dices():
             menu()
             return
         case "Help" | "help" | "h":
-            print(Fore.GREEN + "Syntaxis: (Number of sides+d+Number of sides of the dice) Example: 1d20 (1 dice of 20 sides)" + Style.RESET_ALL)
-            print(Fore.GREEN + "You can add operations to the syntaxis for expecific resposes. Example: 1d20+3 (3 are added to the result)" + Style.RESET_ALL)
-            print(Fore.GREEN + "Use the command 'exit' or 'e' to exit the dice roller" + Style.RESET_ALL)
+            print(Fore.GREEN + "Syntax: (<Number of dice>d<Number of sides>) Example: 1d20 (1 die of 20 sides)" + Style.RESET_ALL)
+            print(Fore.GREEN + "You can add operations to the input for specific results. Example: 1d20+3 (3 is added to the result)" + Style.RESET_ALL)
+            print(Fore.GREEN + "Use the command 'exit' or 'e' to close the dice roller" + Style.RESET_ALL)
             dices()
             return
 
@@ -61,15 +61,15 @@ def dices():
     operation = command[position:long]
 
     if sides < 1:
-        print(Fore.RED + f"You can't roll a dice with {sides} sides" + Style.RESET_ALL)
+        print(Fore.RED + f"You can't roll a die with {sides} sides" + Style.RESET_ALL)
         dices()
         return
 
     #Text
     if rolls < 2:
-        half1 = Fore.YELLOW + str(rolls) + Style.RESET_ALL + " dice of"
+        half1 = Fore.YELLOW + str(rolls) + Style.RESET_ALL + " die of"
     else:
-        half1 = Fore.YELLOW + str(rolls) + Style.RESET_ALL + " dices of"
+        half1 = Fore.YELLOW + str(rolls) + Style.RESET_ALL + " dice of"
     
     if sides < 2:
         half2 = Fore.YELLOW + str(sides) + Style.RESET_ALL + " side"
