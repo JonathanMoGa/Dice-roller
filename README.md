@@ -5,6 +5,7 @@
   <li>Simulate dice with any number of sides</li>
   <li>Roll multiple dice at the same time</li>
   <li>Add up the results</li>
+  <li>Add operations to the rolls</li>
 </ul>
 <h2>▶️Use</h2>
 <ol>
